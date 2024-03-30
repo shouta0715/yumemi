@@ -15,7 +15,14 @@ export default defineConfig({
     include: ["./src/**/*.test.{ts,tsx}"],
     coverage: {
       all: false,
-      reporter: ["html", "text", "json"],
+      reporter: ["html", "text", "json", "json-summary"],
+      reportOnFailure: true,
+      thresholds: {
+        lines: 80,
+        branches: 80,
+        functions: 80,
+        statements: 80,
+      },
       reportsDirectory: "./coverage",
       exclude: ["**/node_modules/**"],
     },
