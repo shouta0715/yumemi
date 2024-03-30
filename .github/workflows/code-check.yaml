@@ -115,4 +115,4 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - run: type-check
+      - run: pnpm type-check
