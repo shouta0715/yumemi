@@ -10,8 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "都道府県別の人口推移",
-    template: "%s | 都道府県別の人口推移",
+    default: "Poplus",
+    template: "%s | Poplus",
   },
   description: "都道府県別の人口推移をグラフで表示します。",
 };
