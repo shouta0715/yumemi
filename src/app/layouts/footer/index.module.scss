@@ -1,0 +1,44 @@
+@use "@/styles/common" as *;
+
+.footer {
+  margin-top: 2.5rem;
+  border-top: 1px solid $border;
+  color: $primary;
+  background-color: $background;
+}
+
+.container {
+  padding: 2.5rem 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  column-gap: 2rem;
+
+  @include bp(sm) {
+    padding: 2.5rem 1.5rem;
+  }
+
+  @include bp(lg) {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.text {
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  color: $muted-foreground;
+}
+
+.source {
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.link {
+  display: inline-block;
+  padding: 0 0.25rem;
+  font-size: 0.875rem;
+  color: $destructive;
+  text-decoration: underline;
+}
