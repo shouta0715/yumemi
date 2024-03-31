@@ -97,6 +97,9 @@ devDependencies:
   '@vitest/ui':
     specifier: ^1.4.0
     version: 1.4.0(vitest@1.4.0)
+  chromatic:
+    specifier: ^11.3.0
+    version: 11.3.0
   dotenv-cli:
     specifier: ^7.4.1
     version: 7.4.1

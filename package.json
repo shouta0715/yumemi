@@ -20,7 +20,8 @@
     "test:e2e:report": "dotenv -e .env.test npx playwright show-report",
     "prepare": "husky",
     "sb": "storybook dev -p 6006",
-    "sb:build": "storybook build"
+    "sb:build": "storybook build",
+    "sb:test": "test-storybook"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^14.1.4",
@@ -55,6 +56,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^1.4.0",
     "@vitest/ui": "^1.4.0",
+    "chromatic": "^11.3.0",
     "dotenv-cli": "^7.4.1",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",

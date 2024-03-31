@@ -1,0 +1,26 @@
+name: "Chromatic"
+
+on:
+  pull_request:
+    paths:
+      - "src/**/*.stories.*"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".env.example"
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: ./.github/actions/setup-pnpm
+
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
