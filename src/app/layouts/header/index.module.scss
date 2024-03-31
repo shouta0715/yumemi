@@ -1,0 +1,42 @@
+@use "@/styles/common" as *;
+
+.header {
+  flex-shrink: 0;
+  border-bottom: 1px solid $border;
+  background-color: $background;
+}
+
+.container {
+  padding: 0 1rem;
+  flex: 1 1 0%;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  column-gap: 2rem;
+
+  height: 3.5rem;
+
+  @include bp(sm) {
+    padding: 0 1.5rem;
+  }
+
+  @include bp(lg) {
+    padding: 0 2rem;
+  }
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  scroll-margin-top: 5rem;
+  color: $primary;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @include bp(lg) {
+    font-size: 2.25rem;
+  }
+}

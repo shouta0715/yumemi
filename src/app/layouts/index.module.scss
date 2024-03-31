@@ -1,0 +1,30 @@
+@use "@/styles/common" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.container {
+  padding: 2.5rem 1rem;
+  flex: 1 1 0%;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  column-gap: 2rem;
+
+  @include bp(sm) {
+    padding: 2.5rem 1.5rem;
+  }
+
+  @include bp(lg) {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.content {
+  flex: 1 1 0%;
+}
