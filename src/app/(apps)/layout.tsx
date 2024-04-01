@@ -1,8 +1,10 @@
 import React from "react";
 import { AppLayout } from "@/app/layouts";
 
-export default function Layout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+export default async function Layout({ children }: Readonly<LayoutProps>) {
   return <AppLayout>{children}</AppLayout>;
 }

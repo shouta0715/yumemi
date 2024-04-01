@@ -1,10 +1,37 @@
 import { BpStory } from "./../src/tests/storybook";
 import type { Preview } from "@storybook/react";
 import "../src/styles/global/index.scss";
+import { action } from "@storybook/addon-actions";
+import { fn } from "@storybook/test";
+
+const nextNavigation = {
+  push: fn((...args: any[]) => {
+    action("nextNavigation.push")(...args);
+  }),
+  replace: fn((...args: any[]) => {
+    action("nextNavigation.replace")(...args);
+  }),
+  forward: fn((...args: any[]) => {
+    action("nextNavigation.forward")(...args);
+  }),
+  back: fn((...args: any[]) => {
+    action("nextNavigation.back")(...args);
+  }),
+  prefetch: fn((...args: any[]) => {
+    action("nextNavigation.prefetch")(...args);
+  }),
+  refresh: fn(() => {
+    action("nextNavigation.refresh")();
+  }),
+};
 
 const preview: Preview = {
   parameters: {
     ...BpStory.parameters,
+    nextjs: {
+      appDirectory: true,
+      navigation: nextNavigation,
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
