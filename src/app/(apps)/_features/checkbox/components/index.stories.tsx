@@ -27,7 +27,7 @@ export const Checked: Story = {
       navigation: {
         pathname: "/",
         query: {
-          prefCodes: "13",
+          prefCode: "13",
         },
       },
     },
@@ -73,7 +73,7 @@ export const NotChecked: Story = {
     await userEvent.click(checkbox);
 
     await expect(parameters.nextjs.navigation.push).toHaveBeenCalledWith(
-      "/?prefCodes=13"
+      "/?prefCode=13"
     );
 
     expect(checkbox).toBeChecked();

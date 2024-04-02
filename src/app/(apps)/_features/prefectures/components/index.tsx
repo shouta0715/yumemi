@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./index.module.scss";
 import { PrefectureCheckbox } from "@/app/(apps)/_features/checkbox/components";
 
-import { getPrefCodeFromSearchParam } from "@/app/(apps)/_features/prefectures/utils";
+import { getPrefCodesFromSearchParams } from "@/app/(apps)/_features/prefectures/utils";
 import { Prefecture } from "@/libs/types/api/prefectures";
 import { SearchParams } from "@/libs/types/next";
 
@@ -22,7 +22,7 @@ export function Prefectures({ prefectures, searchParams }: PrefecturesProps) {
         {prefectures.map((prefecture) => (
           <li key={prefecture.prefCode}>
             <PrefectureCheckbox
-              defaultPrefCodes={getPrefCodeFromSearchParam(searchParams)}
+              defaultPrefCodes={getPrefCodesFromSearchParams(searchParams)}
               prefecture={prefecture}
             />
           </li>
