@@ -187,7 +187,7 @@ pnpm preview
 │   │   │   └── page.tsx # トップページ
 │   │   ├── layout.module.scss　# レイアウト用のスタイル
 │   │   └── layout.tsx　#グローバルレイアウト
-│   ├── components # 共通コンポーネント (ui配下以外は)
+│   ├── components # 共通コンポーネント (ui配下以外はスタイルを持つことができる)
 │   │   ├── checkbox
 │   │   │   ├── index.module.scss
 │   │   │   ├── index.stories.tsx
