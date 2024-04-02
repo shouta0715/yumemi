@@ -3,7 +3,7 @@ export type Prefecture = {
   prefName: string;
 };
 
-export type RESASBaseResponse = {
+export type RESASBadResponse = {
   statusCode: number;
   message: string | null;
   description: string | null;
@@ -14,4 +14,4 @@ export type FetchPrefecturesResponse =
       message: string | null;
       result: Prefecture[];
     }
-  | RESASBaseResponse;
+  | RESASBadResponse;
