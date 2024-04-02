@@ -2,64 +2,64 @@ import { getPrefCodeFromSearchParam } from "@/app/(apps)/_features/prefectures/u
 
 describe("apps/prefectures/utils", () => {
   describe("getPrefCodeFromSearchParam", () => {
-    test("searchParams.prefCodes is string", () => {
-      const searchParams = { prefCodes: "13" };
+    test("searchParams.prefCode is string", () => {
+      const searchParams = { prefCode: "13" };
       const result = getPrefCodeFromSearchParam(searchParams);
       expect(result).toEqual(["13"]);
     });
 
     test("if number string over 47, return empty array", () => {
-      const searchParams = { prefCodes: "48" };
+      const searchParams = { prefCode: "48" };
       const result = getPrefCodeFromSearchParam(searchParams);
       expect(result).toEqual([]);
     });
 
     test("if number string under 1, return empty array", () => {
-      const searchParams = { prefCodes: "0" };
+      const searchParams = { prefCode: "0" };
       const result = getPrefCodeFromSearchParam(searchParams);
       expect(result).toEqual([]);
     });
 
     test("if not number string, return empty array", () => {
-      const searchParams = { prefCodes: "a" };
+      const searchParams = { prefCode: "a" };
       const result = getPrefCodeFromSearchParam(searchParams);
       expect(result).toEqual([]);
     });
 
-    test("searchParams.prefCodes is array", () => {
-      const searchParams = { prefCodes: ["13"] };
+    test("searchParams.prefCode is array", () => {
+      const searchParams = { prefCode: ["13"] };
       const result = getPrefCodeFromSearchParam(searchParams);
       expect(result).toEqual(["13"]);
     });
 
-    test("searchParams.prefCodes is undefined", () => {
-      const searchParams = { prefCodes: undefined };
+    test("searchParams.prefCode is undefined", () => {
+      const searchParams = { prefCode: undefined };
       const result = getPrefCodeFromSearchParam(searchParams);
       expect(result).toEqual([]);
     });
 
     test("if include number string over 47, return removed over 47", () => {
-      const searchParams = { prefCodes: ["13", "48"] };
+      const searchParams = { prefCode: ["13", "48"] };
       const result = getPrefCodeFromSearchParam(searchParams);
       expect(result).toEqual(["13"]);
     });
 
     test("if include not number string, return removed not number", () => {
-      const searchParams = { prefCodes: ["13", "a"] };
+      const searchParams = { prefCode: ["13", "a"] };
       const result = getPrefCodeFromSearchParam(searchParams);
       expect(result).toEqual(["13"]);
     });
 
     test("if include number string under 1, return removed under 1", () => {
-      const searchParams = { prefCodes: ["13", "0", "-10"] };
+      const searchParams = { prefCode: ["13", "0", "-10"] };
 
       const result = getPrefCodeFromSearchParam(searchParams);
 
       expect(result).toEqual(["13"]);
     });
 
-    test("if not prefCodes, return empty array", () => {
-      const searchParams = { prefCodes: [] };
+    test("if not prefCode, return empty array", () => {
+      const searchParams = { prefCode: [] };
       const result = getPrefCodeFromSearchParam(searchParams);
       expect(result).toEqual([]);
 

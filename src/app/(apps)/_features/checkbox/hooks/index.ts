@@ -24,7 +24,7 @@ export function usePrefecture({
     const urlSearchParams = new URLSearchParams();
 
     newPrefCodes.forEach((code) => {
-      urlSearchParams.append("prefCodes", code);
+      urlSearchParams.append("prefCode", code);
     });
 
     startTransition(() => {
