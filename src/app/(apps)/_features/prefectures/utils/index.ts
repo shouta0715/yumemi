@@ -1,6 +1,6 @@
 import { SearchParams } from "@/libs/types/next";
 
-export const getPrefCodeFromSearchParam = (
+export const getPrefCodesFromSearchParams = (
   searchParams: SearchParams
 ): string[] => {
   const prefCodes = searchParams?.prefCode;
