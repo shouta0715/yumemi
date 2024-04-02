@@ -86,7 +86,7 @@ export const Xxl: Story = {
 export const WithSearchParam: Story = {
   args: {
     searchParams: {
-      prefCodes: "13",
+      prefCode: "13",
     },
   },
   parameters: {
@@ -94,7 +94,7 @@ export const WithSearchParam: Story = {
       navigation: {
         pathname: "/",
         query: {
-          prefCodes: "13",
+          prefCode: "13",
         },
       },
     },
