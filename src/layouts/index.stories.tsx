@@ -1,17 +1,19 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Header } from "@/app/layouts/header";
+import { AppLayout } from "@/layouts";
 
 export default {
-  component: Header,
-  title: "layouts/header",
+  component: AppLayout,
+  title: "layouts/app-layout",
   tags: ["autodocs"],
-} satisfies Meta<typeof Header>;
+  args: {
+    children:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laboriosam dolorum, officiis quam perferendis voluptas magnam dolores, recusandae repellendus quos eos placeat, quae consectetur voluptates ipsam? Hic repellendus at veniam?",
+  },
+} satisfies Meta<typeof AppLayout>;
 
-type Story = StoryObj<typeof Header>;
+type Story = StoryObj<typeof AppLayout>;
 
-export const Default: Story = {
-  args: {},
-};
+export const Default: Story = {};
 
 export const Sp: Story = {
   parameters: {
