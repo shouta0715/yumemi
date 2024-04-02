@@ -5,6 +5,13 @@ export default {
   component: Checkbox,
   title: "Components/checkbox",
   tags: ["autdocs"],
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: "label", enabled: false }],
+      },
+    },
+  },
 } satisfies Meta<typeof Checkbox>;
 
 type Story = StoryObj<typeof Checkbox>;

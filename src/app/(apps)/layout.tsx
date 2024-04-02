@@ -1,5 +1,5 @@
 import React from "react";
-import { AppLayout } from "@/app/layouts";
+import { AppLayout } from "@/layouts";
 
 type LayoutProps = {
   children: React.ReactNode;

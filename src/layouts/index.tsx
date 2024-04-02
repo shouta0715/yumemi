@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { Footer } from "@/app/layouts/footer";
-import { Header } from "@/app/layouts/header";
+import { Footer } from "@/layouts/footer";
+import { Header } from "@/layouts/header";
 
 export function AppLayout({
   children,
