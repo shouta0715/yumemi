@@ -1,0 +1,9 @@
+@use "@/styles/common" as *;
+
+.charts__xAxis tspan {
+  fill: $muted-foreground;
+}
+
+.charts__yAxis tspan {
+  fill: $muted-foreground;
+}
