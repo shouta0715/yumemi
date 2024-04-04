@@ -38,6 +38,7 @@ function PopulationCharts({ data, selectedPrefecture }: PopulationListProps) {
         >
           <ChartGrid strokeDasharray="3 3" />
           <ChartXAxis
+            allowDuplicatedCategory={false}
             className={styles.charts__xAxis}
             dataKey="year"
             domain={[1980, 2045]}
@@ -64,8 +65,8 @@ function PopulationCharts({ data, selectedPrefecture }: PopulationListProps) {
             tickFormatter={(value: number) => value.toLocaleString()}
           />
           <ChartTooltip
-            content={({ active, payload, label, coordinate }) => {
-              if (!active || !payload || !coordinate) return null;
+            content={({ active, payload, label }) => {
+              if (!active || !payload) return null;
 
               return <ToolTip label={label} payload={payload} />;
             }}
