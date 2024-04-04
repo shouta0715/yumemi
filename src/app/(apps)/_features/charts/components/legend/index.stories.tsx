@@ -84,7 +84,7 @@ export const BigData: Story = {
       inactive: false,
       dataKey: "value",
       type: "line",
-      color: `hsl(${(i * Math.random() * 360) % 360}deg, 60%, 60%)`,
+      color: `hsl(${i % 360}deg, 60%, 60%)`,
       value: `県${i}`,
     })),
   },
