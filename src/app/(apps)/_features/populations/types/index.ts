@@ -8,3 +8,5 @@ export type FetchSelectedPopulationResponse = {
   contents: PopulationResult["data"];
   prefCode: string;
 };
+
+export type QueryLabelType = "total" | "young" | "productive" | "elderly";

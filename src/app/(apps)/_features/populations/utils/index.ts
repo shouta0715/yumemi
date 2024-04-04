@@ -1,5 +1,6 @@
 import {
   FetchSelectedPopulationResponse,
+  QueryLabelType,
   ViewPopulation,
 } from "@/app/(apps)/_features/populations/types";
 import { LabelType } from "@/libs/types/api/populations";
@@ -23,12 +24,14 @@ export const getLabelType = (
 
 export const parsePopulationResponse = (
   inputs: FetchSelectedPopulationResponse[],
-  type: LabelType
+  type: QueryLabelType
 ): ViewPopulation => {
   const result: ViewPopulation = {};
 
   for (const { contents, prefCode } of inputs) {
-    const filteredContent = contents.find((content) => content.label === type);
+    const filteredContent = contents.find(
+      (content) => content.label === getLabelType(type)
+    );
 
     if (!filteredContent) continue;
 
