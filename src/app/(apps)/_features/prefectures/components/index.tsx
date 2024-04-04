@@ -2,16 +2,13 @@ import React from "react";
 import styles from "./index.module.scss";
 import { PrefectureCheckbox } from "@/app/(apps)/_features/checkbox/components";
 
-import { getPrefCodesFromSearchParams } from "@/app/(apps)/_features/prefectures/utils";
 import { Prefecture } from "@/libs/types/api/prefectures";
-import { SearchParams } from "@/libs/types/next";
 
 type PrefecturesProps = {
   prefectures: Prefecture[];
-  searchParams: SearchParams;
 };
 
-export function Prefectures({ prefectures, searchParams }: PrefecturesProps) {
+export function Prefectures({ prefectures }: PrefecturesProps) {
   return (
     <div>
       <h2 className={styles.prefectures__title}>都道府県の人口を表示します</h2>
@@ -21,10 +18,7 @@ export function Prefectures({ prefectures, searchParams }: PrefecturesProps) {
       <ul className={styles.prefectures}>
         {prefectures.map((prefecture) => (
           <li key={prefecture.prefCode}>
-            <PrefectureCheckbox
-              defaultPrefCodes={getPrefCodesFromSearchParams(searchParams)}
-              prefecture={prefecture}
-            />
+            <PrefectureCheckbox prefecture={prefecture} />
           </li>
         ))}
       </ul>

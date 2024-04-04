@@ -1,21 +1,21 @@
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useTransition } from "react";
 
 type UsePrefecturesProps = {
-  defaultPrefCodes: string[];
   prefCode: number;
 };
 
-export function usePrefecture({
-  defaultPrefCodes,
-  prefCode,
-}: UsePrefecturesProps) {
+export function usePrefecture({ prefCode }: UsePrefecturesProps) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-    const { checked } = event.target;
+    const { value, checked } = event.target;
+
+    const prevType = searchParams.get("type");
+
+    const defaultPrefCodes = searchParams.getAll("prefCode");
 
     const newPrefCodes = checked
       ? [...defaultPrefCodes, value]
@@ -27,16 +27,18 @@ export function usePrefecture({
       urlSearchParams.append("prefCode", code);
     });
 
+    if (prevType) urlSearchParams.set("type", prevType);
+
     startTransition(() => {
       router.push(`/?${urlSearchParams.toString()}`);
     });
   };
 
-  const defaultChecked = defaultPrefCodes.includes(prefCode.toString());
+  const checked = searchParams.getAll("prefCode").includes(prefCode.toString());
 
   return {
     handleCheckboxChange,
     isPending,
-    defaultChecked,
+    checked,
   };
 }

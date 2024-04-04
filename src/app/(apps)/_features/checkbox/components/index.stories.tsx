@@ -5,7 +5,7 @@ import { PrefectureCheckbox } from "@/app/(apps)/_features/checkbox/components";
 
 export default {
   component: PrefectureCheckbox,
-  title: "apps/prefectures/preference-checkbox",
+  title: "apps/prefectures/checkbox",
   tags: ["autdocs"],
 } satisfies Meta<typeof PrefectureCheckbox>;
 
@@ -13,7 +13,6 @@ type Story = StoryObj<typeof PrefectureCheckbox>;
 
 export const Default: Story = {
   args: {
-    defaultPrefCodes: ["13"],
     prefecture: {
       prefCode: 13,
       prefName: "東京都",
@@ -34,7 +33,6 @@ export const Checked: Story = {
   },
 
   args: {
-    defaultPrefCodes: ["13"],
     prefecture: {
       prefCode: 13,
       prefName: "東京都",
@@ -57,7 +55,6 @@ export const Checked: Story = {
 
 export const NotChecked: Story = {
   args: {
-    defaultPrefCodes: [],
     prefecture: {
       prefCode: 13,
       prefName: "東京都",
