@@ -106,10 +106,10 @@ export const BigData: Story = {
   args: {
     payload: Array.from({ length: 1000 }, (_, i) => ({
       name: `${i}`,
-      stroke: `hsl(${(i * Math.random() * 360) % 360}deg, 60%, 60%)`,
+      stroke: `hsl(${(i * 360) % 360}deg, 60%, 60%)`,
       strokeWidth: 1,
       dataKey: "value",
-      color: `hsl(${(i * Math.random() * 360) % 360}deg, 60%, 60%)`,
+      color: `hsl(${(i * 360) % 360}deg, 60%, 60%)`,
       value: 5420480,
       payload: {
         year: 1980,
