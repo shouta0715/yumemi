@@ -11,8 +11,8 @@ export function usePrefecture({ prefCode }: UsePrefecturesProps) {
   const [isPending, startTransition] = useTransition();
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-    const { checked } = event.target;
+    const { value, checked } = event.target;
+
     const prevType = searchParams.get("type");
 
     const defaultPrefCodes = searchParams.getAll("prefCode");
