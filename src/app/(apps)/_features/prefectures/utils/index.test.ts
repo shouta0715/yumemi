@@ -1,4 +1,7 @@
-import { getPrefCodesFromSearchParams } from "@/app/(apps)/_features/prefectures/utils";
+import {
+  getPrefCodesFromSearchParams,
+  getSelectedPrefectures,
+} from "@/app/(apps)/_features/prefectures/utils";
 
 describe("apps/prefectures/utils", () => {
   describe("getPrefCodesFromSearchParams", () => {
@@ -68,6 +71,32 @@ describe("apps/prefectures/utils", () => {
       const result2 = getPrefCodesFromSearchParams(searchParams2);
 
       expect(result2).toEqual([]);
+    });
+  });
+
+  describe("getSelectedPrefectures", () => {
+    test("return selected prefectures", () => {
+      const allPrefectures = [
+        { prefCode: 13, prefName: "東京都" },
+        { prefCode: 14, prefName: "神奈川県" },
+      ];
+      const selectedPrefCodes = ["13"];
+
+      const result = getSelectedPrefectures(allPrefectures, selectedPrefCodes);
+
+      expect(result).toEqual([{ prefCode: 13, prefName: "東京都" }]);
+    });
+
+    test("return empty array if not selected", () => {
+      const allPrefectures = [
+        { prefCode: 13, prefName: "東京都" },
+        { prefCode: 14, prefName: "神奈川県" },
+      ];
+      const selectedPrefCodes = ["15"];
+
+      const result = getSelectedPrefectures(allPrefectures, selectedPrefCodes);
+
+      expect(result).toEqual([]);
     });
   });
 });
