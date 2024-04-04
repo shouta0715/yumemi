@@ -1,6 +1,7 @@
 import { mockFetchSelectedPopulationResponse } from "@/app/(apps)/_features/populations/mocks";
 import {
   getLabelType,
+  getQueryLabelType,
   parsePopulationResponse,
 } from "@/app/(apps)/_features/populations/utils";
 
@@ -39,6 +40,43 @@ describe("apps/populations/utils", () => {
     test("type is array", () => {
       const result = getLabelType(["total"]);
       expect(result).toEqual("総人口");
+    });
+  });
+
+  describe("getQueryLabelType", () => {
+    test("type is total", () => {
+      const result = getQueryLabelType("total");
+      expect(result).toEqual("total");
+    });
+
+    test("type is young", () => {
+      const result = getQueryLabelType("young");
+      expect(result).toEqual("young");
+    });
+
+    test("type is productive", () => {
+      const result = getQueryLabelType("productive");
+      expect(result).toEqual("productive");
+    });
+
+    test("type is elderly", () => {
+      const result = getQueryLabelType("elderly");
+      expect(result).toEqual("elderly");
+    });
+
+    test("type is undefined", () => {
+      const result = getQueryLabelType(undefined);
+      expect(result).toEqual("total");
+    });
+
+    test("type is null", () => {
+      const result = getQueryLabelType(null);
+      expect(result).toEqual("total");
+    });
+
+    test("type is array", () => {
+      const result = getQueryLabelType(["total"]);
+      expect(result).toEqual("total");
     });
   });
 

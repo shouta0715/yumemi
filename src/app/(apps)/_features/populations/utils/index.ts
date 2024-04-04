@@ -22,6 +22,23 @@ export const getLabelType = (
   }
 };
 
+export const getQueryLabelType = (
+  type: string[] | undefined | string | null
+): QueryLabelType => {
+  switch (type) {
+    case "total":
+      return "total";
+    case "young":
+      return "young";
+    case "productive":
+      return "productive";
+    case "elderly":
+      return "elderly";
+    default:
+      return "total";
+  }
+};
+
 export const parsePopulationResponse = (
   inputs: FetchSelectedPopulationResponse[],
   type: QueryLabelType

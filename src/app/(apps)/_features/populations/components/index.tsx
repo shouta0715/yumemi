@@ -3,15 +3,15 @@ import React from "react";
 
 import { ChartLoader } from "@/app/(apps)/_features/charts/components/loader";
 import { fetchSelectedPopulation } from "@/app/(apps)/_features/populations/api";
+import { QueryLabelType } from "@/app/(apps)/_features/populations/types";
 import { parsePopulationResponse } from "@/app/(apps)/_features/populations/utils";
 import { getSelectedPrefectures } from "@/app/(apps)/_features/prefectures/utils";
-import { LabelType } from "@/libs/types/api/populations";
 import { Prefecture } from "@/libs/types/api/prefectures";
 
 type PopulationListProps = {
   allPrefectures: Prefecture[];
   selectedPrefCodes: string[];
-  type: LabelType;
+  type: QueryLabelType;
 };
 
 const DynamicPopulationCharts = dynamic(

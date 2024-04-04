@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { ChartLoader } from "@/app/(apps)/_features/charts/components/loader";
 import { Populations } from "@/app/(apps)/_features/populations/components";
 import { EmptyCharts } from "@/app/(apps)/_features/populations/components/empty";
-import { getLabelType } from "@/app/(apps)/_features/populations/utils";
+import { getQueryLabelType } from "@/app/(apps)/_features/populations/utils";
 import { fetchPrefectures } from "@/app/(apps)/_features/prefectures/api";
 import { Prefectures } from "@/app/(apps)/_features/prefectures/components";
 import { getPrefCodesFromSearchParams } from "@/app/(apps)/_features/prefectures/utils";
@@ -28,7 +28,7 @@ export default async function Page({
             <Populations
               allPrefectures={prefectures}
               selectedPrefCodes={selectedPrefCodes}
-              type={getLabelType(searchParams?.type)}
+              type={getQueryLabelType(searchParams?.type)}
             />
           </Suspense>
         )}
