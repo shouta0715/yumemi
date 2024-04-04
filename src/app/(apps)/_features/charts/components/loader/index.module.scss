@@ -1,0 +1,31 @@
+@use "@/styles/common" as *;
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loader {
+  height: 516px;
+  margin-left: 4.75rem;
+  border-left: 1px solid $border;
+  border-bottom: 1px solid $border;
+  border-radius: $radius;
+  padding: 1rem;
+  margin-top: 2rem;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.loader__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $accent;
+  height: 100%;
+}
