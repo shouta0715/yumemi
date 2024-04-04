@@ -84,11 +84,6 @@ export const Xxl: Story = {
 };
 
 export const WithSearchParam: Story = {
-  args: {
-    searchParams: {
-      prefCode: "13",
-    },
-  },
   parameters: {
     nextjs: {
       navigation: {
