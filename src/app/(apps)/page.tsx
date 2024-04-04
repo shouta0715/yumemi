@@ -19,7 +19,7 @@ export default async function Page({
 
   return (
     <div>
-      <Prefectures prefectures={prefectures} searchParams={searchParams} />
+      <Prefectures prefectures={prefectures} />
       <div>
         {selectedPrefCodes.length === 0 ? (
           <EmptyCharts />

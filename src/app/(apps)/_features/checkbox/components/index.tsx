@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { memo } from "react";
 import styles from "./index.module.scss";
 import { usePrefecture } from "@/app/(apps)/_features/checkbox/hooks";
 import { Checkbox } from "@/components/checkbox";
@@ -11,32 +11,31 @@ type PrefectureCheckboxProps = {
     prefCode: number;
     prefName: string;
   };
-  defaultPrefCodes: string[];
 };
 
-export function PrefectureCheckbox({
-  prefecture: { prefCode, prefName },
-  defaultPrefCodes,
-}: PrefectureCheckboxProps) {
-  const { handleCheckboxChange, defaultChecked, isPending } = usePrefecture({
-    defaultPrefCodes,
-    prefCode,
-  });
+export const PrefectureCheckbox = memo(
+  ({ prefecture: { prefCode, prefName } }: PrefectureCheckboxProps) => {
+    const { handleCheckboxChange, checked, isPending } = usePrefecture({
+      prefCode,
+    });
 
-  return (
-    <label className={styles.prefecture} htmlFor={`prefecture-${prefCode}`}>
-      {isPending ? (
-        <Loader height={16} width={16} />
-      ) : (
-        <Checkbox
-          defaultChecked={defaultChecked}
-          id={`prefecture-${prefCode}`}
-          onChange={handleCheckboxChange}
-          value={prefCode}
-        />
-      )}
+    return (
+      <label className={styles.prefecture} htmlFor={`prefecture-${prefCode}`}>
+        {isPending ? (
+          <Loader height={16} width={16} />
+        ) : (
+          <Checkbox
+            checked={checked}
+            id={`prefecture-${prefCode}`}
+            onChange={handleCheckboxChange}
+            value={prefCode}
+          />
+        )}
 
-      {prefName}
-    </label>
-  );
-}
+        {prefName}
+      </label>
+    );
+  }
+);
+
+PrefectureCheckbox.displayName = "PrefectureCheckbox";
