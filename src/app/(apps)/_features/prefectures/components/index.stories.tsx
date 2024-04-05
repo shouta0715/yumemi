@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { within, expect, userEvent } from "@storybook/test";
+import { within, expect, userEvent, screen } from "@storybook/test";
 import { Prefectures } from "@/app/(apps)/_features/prefectures/components";
 import { mockPrefectures } from "@/app/(apps)/_features/prefectures/mocks";
 
@@ -21,7 +21,15 @@ export const Default: Story = {
   play: async ({ canvasElement, parameters }) => {
     const canvas = within(canvasElement);
 
-    const checkboxes = canvas.getAllByRole("checkbox");
+    const button = canvas.getByRole("button", { name: "都道府県の選択" });
+
+    await userEvent.click(button);
+
+    const popover = screen.getByRole("dialog");
+
+    expect(popover).toBeInTheDocument();
+
+    const checkboxes = screen.getAllByRole("checkbox");
 
     expect(checkboxes).toHaveLength(47);
 
@@ -95,7 +103,16 @@ export const WithSearchParam: Story = {
 
   play: async ({ canvasElement, parameters }) => {
     const canvas = within(canvasElement);
-    const checkbox = canvas.getByRole("checkbox", { name: "東京都" });
+
+    const button = canvas.getByRole("button", { name: "都道府県の選択" });
+
+    await userEvent.click(button);
+
+    const popover = screen.getByRole("dialog");
+
+    expect(popover).toBeInTheDocument();
+
+    const checkbox = screen.getByRole("checkbox", { name: "東京都" });
 
     expect(checkbox).toBeChecked();
 
@@ -104,5 +121,11 @@ export const WithSearchParam: Story = {
     await expect(parameters.nextjs.navigation.push).toBeCalledTimes(1);
 
     expect(checkbox).not.toBeChecked();
+  },
+};
+
+export const NonSelected: Story = {
+  args: {
+    selectedLength: 0,
   },
 };

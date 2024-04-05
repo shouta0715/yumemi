@@ -1,27 +1,37 @@
+import { ChevronDown, X } from "lucide-react";
 import React from "react";
 import styles from "./index.module.scss";
-import { PrefectureCheckbox } from "@/app/(apps)/_features/checkbox/components";
 
+import { Regions } from "@/app/(apps)/_features/prefectures/components/regions";
+import {
+  Popover,
+  PopoverClose,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Prefecture } from "@/libs/types/api/prefectures";
 
 type PrefecturesProps = {
   prefectures: Prefecture[];
+  selectedLength: number;
 };
 
-export function Prefectures({ prefectures }: PrefecturesProps) {
+export function Prefectures({ prefectures, selectedLength }: PrefecturesProps) {
   return (
     <div>
-      <h2 className={styles.prefectures__title}>都道府県の人口を表示します</h2>
-      <p className={styles.prefectures__description}>
-        表示する都道府県を選択してください（複数選択可）
-      </p>
-      <ul className={styles.prefectures}>
-        {prefectures.map((prefecture) => (
-          <li key={prefecture.prefCode}>
-            <PrefectureCheckbox prefecture={prefecture} />
-          </li>
-        ))}
-      </ul>
+      <p className={styles.popover__label}>都道府県を選択してください。</p>
+      <Popover>
+        <PopoverTrigger className={styles.popover__trigger}>
+          都道府県の選択 {selectedLength > 0 && `(${selectedLength})`}
+          <ChevronDown className={styles.popover__trigger__icon} />
+        </PopoverTrigger>
+        <PopoverContent align="start" className={styles.popover__content}>
+          <PopoverClose className={styles.popover__close}>
+            <X aria-label="閉じる" className={styles.popover__close__icon} />
+          </PopoverClose>
+          <Regions prefectures={prefectures} selectedLength={selectedLength} />
+        </PopoverContent>
+      </Popover>
     </div>
   );
 }

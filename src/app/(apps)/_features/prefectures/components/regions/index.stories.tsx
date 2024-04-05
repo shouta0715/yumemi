@@ -1,15 +1,18 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { EmptyCharts } from "@/app/(apps)/_features/populations/components/empty";
-
+import { Regions } from "@/app/(apps)/_features/prefectures/components/regions";
+import { mockPrefectures } from "@/app/(apps)/_features/prefectures/mocks";
 import { selectViewport } from "@/tests/storybook";
 
 export default {
-  component: EmptyCharts,
-  title: "apps/populations/empty",
+  component: Regions,
+  title: "apps/prefectures/regions",
   tags: ["autodocs"],
-} satisfies Meta<typeof EmptyCharts>;
+  args: {
+    prefectures: mockPrefectures,
+  },
+} satisfies Meta<typeof Regions>;
 
-type Story = StoryObj<typeof EmptyCharts>;
+type Story = StoryObj<typeof Regions>;
 
 export const Default: Story = {};
 
@@ -46,5 +49,11 @@ export const Xl: Story = {
 export const Xxl: Story = {
   parameters: {
     viewport: selectViewport("2xl"),
+  },
+};
+
+export const NonSelected: Story = {
+  args: {
+    selectedLength: 0,
   },
 };
