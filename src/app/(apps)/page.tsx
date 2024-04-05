@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import { ChartLoader } from "@/app/(apps)/_features/charts/components/loader";
 import { Populations } from "@/app/(apps)/_features/populations/components";
-import { EmptyCharts } from "@/app/(apps)/_features/populations/components/empty";
 import { getQueryLabelType } from "@/app/(apps)/_features/populations/utils";
 import { fetchPrefectures } from "@/app/(apps)/_features/prefectures/api";
 import { Prefectures } from "@/app/(apps)/_features/prefectures/components";
+import { Regions } from "@/app/(apps)/_features/prefectures/components/regions";
 import { getPrefCodesFromSearchParams } from "@/app/(apps)/_features/prefectures/utils";
 import { TypeNavigation } from "@/app/(apps)/_features/type-navigation/components";
 import { SearchParams } from "@/libs/types/next";
@@ -20,13 +20,16 @@ export default async function Page({
 
   return (
     <div>
-      <Prefectures prefectures={prefectures} />
+      <Prefectures
+        prefectures={prefectures}
+        selectedLength={selectedPrefCodes.length}
+      />
       <div>
         <TypeNavigation selectedType={getQueryLabelType(searchParams?.type)} />
       </div>
       <div>
         {selectedPrefCodes.length === 0 ? (
-          <EmptyCharts />
+          <Regions prefectures={prefectures} selectedLength={0} />
         ) : (
           <Suspense fallback={<ChartLoader />}>
             <Populations
