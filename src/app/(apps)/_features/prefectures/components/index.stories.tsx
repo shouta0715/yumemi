@@ -123,3 +123,9 @@ export const WithSearchParam: Story = {
     expect(checkbox).not.toBeChecked();
   },
 };
+
+export const NonSelected: Story = {
+  args: {
+    selectedLength: 0,
+  },
+};

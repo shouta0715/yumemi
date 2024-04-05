@@ -1,10 +1,11 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import React from "react";
 import styles from "./index.module.scss";
 
 import { Regions } from "@/app/(apps)/_features/prefectures/components/regions";
 import {
   Popover,
+  PopoverClose,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
@@ -25,6 +26,9 @@ export function Prefectures({ prefectures, selectedLength }: PrefecturesProps) {
           <ChevronDown className={styles.popover__trigger__icon} />
         </PopoverTrigger>
         <PopoverContent align="start" className={styles.popover__content}>
+          <PopoverClose className={styles.popover__close}>
+            <X aria-label="閉じる" className={styles.popover__close__icon} />
+          </PopoverClose>
           <Regions prefectures={prefectures} selectedLength={selectedLength} />
         </PopoverContent>
       </Popover>

@@ -15,7 +15,7 @@ export function Regions({ prefectures, selectedLength }: RegionsProps) {
   return (
     <>
       <p className={styles.regions__description}>
-        表示する都道府県を選択してください。複数選択可能です。
+        表示する都道府県を選択してください。
         {selectedLength === 0 && (
           <span className={styles.regions__description__note}>
             都道府県を選択すると、人口グラフが表示されます。

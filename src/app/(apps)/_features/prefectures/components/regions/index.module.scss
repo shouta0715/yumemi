@@ -13,8 +13,11 @@
 .regions__description {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  padding-right: 2rem;
   color: $primary;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .regions__description__note {

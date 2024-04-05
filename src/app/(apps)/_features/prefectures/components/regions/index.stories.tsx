@@ -48,6 +48,12 @@ export const Xl: Story = {
 
 export const Xxl: Story = {
   parameters: {
-    viewport: { defaultViewport: "2xl" },
+    viewport: selectViewport("2xl"),
+  },
+};
+
+export const NonSelected: Story = {
+  args: {
+    selectedLength: 0,
   },
 };
