@@ -6,6 +6,7 @@ import { getQueryLabelType } from "@/app/(apps)/_features/populations/utils";
 import { fetchPrefectures } from "@/app/(apps)/_features/prefectures/api";
 import { Prefectures } from "@/app/(apps)/_features/prefectures/components";
 import { getPrefCodesFromSearchParams } from "@/app/(apps)/_features/prefectures/utils";
+import { TypeNavigation } from "@/app/(apps)/_features/type-navigation/components";
 import { SearchParams } from "@/libs/types/next";
 
 export default async function Page({
@@ -20,6 +21,9 @@ export default async function Page({
   return (
     <div>
       <Prefectures prefectures={prefectures} />
+      <div>
+        <TypeNavigation selectedType={getQueryLabelType(searchParams?.type)} />
+      </div>
       <div>
         {selectedPrefCodes.length === 0 ? (
           <EmptyCharts />
