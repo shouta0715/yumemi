@@ -3,10 +3,12 @@ import { within, expect } from "@storybook/test";
 import { Legend } from "@/app/(apps)/_features/charts/components/legend";
 import { mockLegendData } from "@/app/(apps)/_features/charts/components/legend/mocks";
 
+import { selectViewport } from "@/tests/storybook";
+
 export default {
   component: Legend,
-  title: "apps/populations/charts/legend",
-  tags: ["autdocs"],
+  title: "apps/charts/legend",
+  tags: ["autodocs"],
 } satisfies Meta<typeof Legend>;
 
 type Story = StoryObj<typeof Legend>;
@@ -29,7 +31,7 @@ export const Sp: Story = {
     payload: mockLegendData,
   },
   parameters: {
-    viewport: { defaultViewport: "sp" },
+    viewport: selectViewport("sp"),
   },
 };
 
@@ -38,7 +40,7 @@ export const Sm: Story = {
     payload: mockLegendData,
   },
   parameters: {
-    viewport: { defaultViewport: "sm" },
+    viewport: selectViewport("sm"),
   },
 };
 
@@ -46,9 +48,7 @@ export const Md: Story = {
   args: {
     payload: mockLegendData,
   },
-  parameters: {
-    viewport: { defaultViewport: "md" },
-  },
+  parameters: selectViewport("md"),
 };
 
 export const Lg: Story = {
@@ -56,7 +56,7 @@ export const Lg: Story = {
     payload: mockLegendData,
   },
   parameters: {
-    viewport: { defaultViewport: "lg" },
+    viewport: selectViewport("lg"),
   },
 };
 
@@ -65,7 +65,7 @@ export const Xl: Story = {
     payload: mockLegendData,
   },
   parameters: {
-    viewport: { defaultViewport: "xl" },
+    viewport: selectViewport("xl"),
   },
 };
 
@@ -74,7 +74,7 @@ export const Xxl: Story = {
     payload: mockLegendData,
   },
   parameters: {
-    viewport: { defaultViewport: "xxl" },
+    viewport: selectViewport("2xl"),
   },
 };
 

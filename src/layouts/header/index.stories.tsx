@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Header } from "@/layouts/header";
 
+import { selectViewport } from "@/tests/storybook";
+
 export default {
   component: Header,
   title: "layouts/header",
@@ -15,31 +17,29 @@ export const Default: Story = {
 
 export const Sp: Story = {
   parameters: {
-    viewport: { defaultViewport: "sp" },
+    viewport: selectViewport("sp"),
   },
 };
 
 export const Sm: Story = {
   parameters: {
-    viewport: { defaultViewport: "sm" },
+    viewport: selectViewport("sm"),
   },
 };
 
 export const Md: Story = {
-  parameters: {
-    viewport: { defaultViewport: "md" },
-  },
+  parameters: selectViewport("md"),
 };
 
 export const Lg: Story = {
   parameters: {
-    viewport: { defaultViewport: "lg" },
+    viewport: selectViewport("lg"),
   },
 };
 
 export const Xl: Story = {
   parameters: {
-    viewport: { defaultViewport: "xl" },
+    viewport: selectViewport("xl"),
   },
 };
 

@@ -1,10 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ChartLoader } from "@/app/(apps)/_features/charts/components/loader";
+import { selectViewport } from "@/tests/storybook";
 
 export default {
   component: ChartLoader,
-  title: "apps/populations/charts/loader",
-  tags: ["autdocs"],
+  title: "apps/charts/loader",
+  tags: ["autodocs"],
 } satisfies Meta<typeof ChartLoader>;
 
 type Story = StoryObj<typeof ChartLoader>;
@@ -13,36 +14,36 @@ export const Default: Story = {};
 
 export const Sp: Story = {
   parameters: {
-    viewport: { defaultViewport: "sp" },
+    viewport: selectViewport("sp"),
   },
 };
 
 export const Sm: Story = {
   parameters: {
-    viewport: { defaultViewport: "sm" },
+    viewport: selectViewport("sm"),
   },
 };
 
 export const Md: Story = {
   parameters: {
-    viewport: { defaultViewport: "md" },
+    viewport: selectViewport("md"),
   },
 };
 
 export const Lg: Story = {
   parameters: {
-    viewport: { defaultViewport: "lg" },
+    viewport: selectViewport("lg"),
   },
 };
 
 export const Xl: Story = {
   parameters: {
-    viewport: { defaultViewport: "xl" },
+    viewport: selectViewport("xl"),
   },
 };
 
 export const Xxl: Story = {
   parameters: {
-    viewport: { defaultViewport: "xxl" },
+    viewport: selectViewport("2xl"),
   },
 };

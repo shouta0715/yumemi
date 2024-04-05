@@ -4,7 +4,7 @@ import { Loader } from "@/components/loader";
 export default {
   component: Loader,
   title: "Components/loader",
-  tags: ["autdocs"],
+  tags: ["autodocs"],
 } satisfies Meta<typeof Loader>;
 
 type Story = StoryObj<typeof Loader>;

@@ -4,7 +4,7 @@ import { Checkbox } from "@/components/checkbox";
 export default {
   component: Checkbox,
   title: "Components/checkbox",
-  tags: ["autdocs"],
+  tags: ["autodocs"],
   parameters: {
     a11y: {
       config: {
