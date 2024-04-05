@@ -65,3 +65,10 @@ export const BpStory: StoryObj = {
     },
   },
 };
+
+type Viewport = keyof typeof viewports;
+export const selectViewport = (viewport: Viewport) => {
+  return {
+    defaultViewport: viewport,
+  };
+};

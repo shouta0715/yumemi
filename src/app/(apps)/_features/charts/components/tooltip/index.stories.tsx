@@ -3,10 +3,12 @@ import { within, expect } from "@storybook/test";
 import { ToolTip } from "@/app/(apps)/_features/charts/components/tooltip";
 import { mockTooltipData } from "@/app/(apps)/_features/charts/components/tooltip/mocks";
 
+import { selectViewport } from "@/tests/storybook";
+
 export default {
   component: ToolTip,
-  title: "apps/populations/charts/tooltip",
-  tags: ["autdocs"],
+  title: "apps/charts/tooltip",
+  tags: ["autodocs"],
   args: {
     label: "2024",
   },
@@ -53,7 +55,7 @@ export const Sp: Story = {
     payload: mockTooltipData,
   },
   parameters: {
-    viewport: { defaultViewport: "sp" },
+    viewport: selectViewport("sp"),
   },
 };
 
@@ -62,7 +64,7 @@ export const Sm: Story = {
     payload: mockTooltipData,
   },
   parameters: {
-    viewport: { defaultViewport: "sm" },
+    viewport: selectViewport("sm"),
   },
 };
 
@@ -71,7 +73,7 @@ export const Md: Story = {
     payload: mockTooltipData,
   },
   parameters: {
-    viewport: { defaultViewport: "md" },
+    viewport: selectViewport("md"),
   },
 };
 
@@ -80,7 +82,7 @@ export const Lg: Story = {
     payload: mockTooltipData,
   },
   parameters: {
-    viewport: { defaultViewport: "lg" },
+    viewport: selectViewport("lg"),
   },
 };
 
@@ -89,7 +91,7 @@ export const Xl: Story = {
     payload: mockTooltipData,
   },
   parameters: {
-    viewport: { defaultViewport: "xl" },
+    viewport: selectViewport("xl"),
   },
 };
 
@@ -98,7 +100,7 @@ export const Xxl: Story = {
     payload: mockTooltipData,
   },
   parameters: {
-    viewport: { defaultViewport: "xxl" },
+    viewport: selectViewport("2xl"),
   },
 };
 

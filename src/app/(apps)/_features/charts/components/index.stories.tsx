@@ -5,11 +5,12 @@ import {
   mockPopulationData,
   mockSelectedPopulationData,
 } from "@/app/(apps)/_features/charts/components/mocks";
+import { selectViewport } from "@/tests/storybook";
 
 export default {
   component: PopulationCharts,
-  title: "apps/populations/charts",
-  tags: ["autdocs"],
+  title: "apps/charts",
+  tags: ["autodocs"],
   args: {
     data: mockPopulationData,
     selectedPrefecture: mockSelectedPopulationData,
@@ -30,40 +31,36 @@ export const Default: Story = {
 
 export const Sp: Story = {
   parameters: {
-    viewport: { defaultViewport: "sp" },
+    viewport: selectViewport("sp"),
   },
 };
 
 export const Sm: Story = {
   parameters: {
-    viewport: { defaultViewport: "sm" },
+    viewport: selectViewport("sm"),
   },
 };
 
 export const Md: Story = {
   parameters: {
-    viewport: { defaultViewport: "md" },
+    viewport: selectViewport("md"),
   },
 };
 
 export const Lg: Story = {
   parameters: {
-    viewport: { defaultViewport: "lg" },
+    viewport: selectViewport("lg"),
   },
 };
 
 export const Xl: Story = {
   parameters: {
-    viewport: { defaultViewport: "xl" },
+    viewport: selectViewport("xl"),
   },
 };
 
 export const Xxl: Story = {
-  args: {
-    data: mockPopulationData,
-    selectedPrefecture: mockSelectedPopulationData,
-  },
   parameters: {
-    viewport: { defaultViewport: "xxl" },
+    viewport: selectViewport("2xl"),
   },
 };

@@ -1,10 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { EmptyCharts } from "@/app/(apps)/_features/populations/components/empty";
 
+import { selectViewport } from "@/tests/storybook";
+
 export default {
   component: EmptyCharts,
   title: "apps/populations/empty",
-  tags: ["autdocs"],
+  tags: ["autodocs"],
 } satisfies Meta<typeof EmptyCharts>;
 
 type Story = StoryObj<typeof EmptyCharts>;
@@ -13,36 +15,36 @@ export const Default: Story = {};
 
 export const Sp: Story = {
   parameters: {
-    viewport: { defaultViewport: "sp" },
+    viewport: selectViewport("sp"),
   },
 };
 
 export const Sm: Story = {
   parameters: {
-    viewport: { defaultViewport: "sm" },
+    viewport: selectViewport("sm"),
   },
 };
 
 export const Md: Story = {
   parameters: {
-    viewport: { defaultViewport: "md" },
+    viewport: selectViewport("md"),
   },
 };
 
 export const Lg: Story = {
   parameters: {
-    viewport: { defaultViewport: "lg" },
+    viewport: selectViewport("lg"),
   },
 };
 
 export const Xl: Story = {
   parameters: {
-    viewport: { defaultViewport: "xl" },
+    viewport: selectViewport("xl"),
   },
 };
 
 export const Xxl: Story = {
   parameters: {
-    viewport: { defaultViewport: "xxl" },
+    viewport: selectViewport("2xl"),
   },
 };

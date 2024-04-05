@@ -5,8 +5,8 @@ import { PrefectureCheckbox } from "@/app/(apps)/_features/checkbox/components";
 
 export default {
   component: PrefectureCheckbox,
-  title: "apps/prefectures/checkbox",
-  tags: ["autdocs"],
+  title: "apps/checkbox",
+  tags: ["autodocs"],
 } satisfies Meta<typeof PrefectureCheckbox>;
 
 type Story = StoryObj<typeof PrefectureCheckbox>;

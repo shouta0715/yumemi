@@ -3,10 +3,12 @@ import { within, expect, userEvent } from "@storybook/test";
 import { Prefectures } from "@/app/(apps)/_features/prefectures/components";
 import { mockPrefectures } from "@/app/(apps)/_features/prefectures/mocks";
 
+import { selectViewport } from "@/tests/storybook";
+
 export default {
   component: Prefectures,
-  title: "apps/prefectures/prefectures",
-  tags: ["autdocs"],
+  title: "apps/prefectures",
+  tags: ["autodocs"],
   args: {
     prefectures: mockPrefectures,
   },
@@ -16,10 +18,6 @@ type Story = StoryObj<typeof Prefectures>;
 
 export const Default: Story = {
   args: {},
-  parameters: {
-    viewport: { defaultViewport: "md" },
-  },
-
   play: async ({ canvasElement, parameters }) => {
     const canvas = within(canvasElement);
 
@@ -49,31 +47,31 @@ export const Default: Story = {
 
 export const Sp: Story = {
   parameters: {
-    viewport: { defaultViewport: "sp" },
+    viewport: selectViewport("sp"),
   },
 };
 
 export const Sm: Story = {
   parameters: {
-    viewport: { defaultViewport: "sm" },
+    viewport: selectViewport("sm"),
   },
 };
 
 export const Md: Story = {
   parameters: {
-    viewport: { defaultViewport: "md" },
+    viewport: selectViewport("md"),
   },
 };
 
 export const Lg: Story = {
   parameters: {
-    viewport: { defaultViewport: "lg" },
+    viewport: selectViewport("lg"),
   },
 };
 
 export const Xl: Story = {
   parameters: {
-    viewport: { defaultViewport: "xl" },
+    viewport: selectViewport("xl"),
   },
 };
 
