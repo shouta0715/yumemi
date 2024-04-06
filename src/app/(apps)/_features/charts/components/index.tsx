@@ -6,7 +6,11 @@ import React from "react";
 import styles from "./index.module.scss";
 import { Legend } from "@/app/(apps)/_features/charts/components/legend";
 import { ToolTip } from "@/app/(apps)/_features/charts/components/tooltip";
-import { ViewPopulation } from "@/app/(apps)/_features/populations/types";
+import {
+  QueryLabelType,
+  ViewPopulation,
+} from "@/app/(apps)/_features/populations/types";
+import { getLabelType } from "@/app/(apps)/_features/populations/utils";
 import {
   ChartGrid,
   ChartLegend,
@@ -22,9 +26,14 @@ import { Prefecture } from "@/libs/types/api/prefectures";
 type PopulationListProps = {
   data: ViewPopulation;
   selectedPrefecture: Prefecture[];
+  type: QueryLabelType;
 };
 
-function PopulationCharts({ data, selectedPrefecture }: PopulationListProps) {
+function PopulationCharts({
+  data,
+  selectedPrefecture,
+  type,
+}: PopulationListProps) {
   return (
     <div>
       <ResponsiveChartContainer height={600} width="100%">
@@ -45,8 +54,9 @@ function PopulationCharts({ data, selectedPrefecture }: PopulationListProps) {
             label={{
               value: "年度",
               position: "right",
-              dx: -30,
+              dx: -20,
               dy: 20,
+              fontSize: 13,
             }}
             tick={{
               fontSize: 14,
@@ -58,9 +68,11 @@ function PopulationCharts({ data, selectedPrefecture }: PopulationListProps) {
             className={styles.charts__yAxis}
             fontSize={14}
             label={{
-              value: "人口数",
+              value: `${getLabelType(type)}`,
               position: "insideTopLeft",
-              dy: -40,
+              dy: -30,
+              dx: -20,
+              fontSize: 13,
             }}
             tickFormatter={(value: number) => value.toLocaleString()}
           />
@@ -68,7 +80,7 @@ function PopulationCharts({ data, selectedPrefecture }: PopulationListProps) {
             content={({ active, payload, label }) => {
               if (!active || !payload) return null;
 
-              return <ToolTip label={label} payload={payload} />;
+              return <ToolTip label={label} payload={payload} type={type} />;
             }}
             formatter={(value: number) => {
               return `${value.toLocaleString()} 人`;
