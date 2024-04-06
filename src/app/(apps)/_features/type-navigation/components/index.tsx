@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { CheckIcon, ChevronDown } from "lucide-react";
+import { CheckIcon, ChevronDown, XIcon } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -11,6 +11,7 @@ import { QueryLabelType } from "@/app/(apps)/_features/populations/types";
 import { getLabelType } from "@/app/(apps)/_features/populations/utils";
 import {
   Popover,
+  PopoverClose,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
@@ -50,32 +51,43 @@ export function TypeNavigation({ selectedType }: TypeNavigationProps) {
           <ChevronDown className={styles.popover__trigger__icon} />
         </button>
       </PopoverTrigger>
-      <PopoverContent className={styles.popover__content}>
-        {typeOptions.map((option) => (
-          <Link
-            key={option.value}
-            aria-current={selectedType === option.value ? "page" : undefined}
-            aria-label={option.label}
-            aria-selected={selectedType === option.value}
-            className={clsx(
-              styles.popover__item,
-              selectedType === option.value && styles["popover__item--active"]
-            )}
-            href={{
-              pathname: "/",
-              query: {
-                prefCode: searchParams.getAll("prefCode"),
-                type: option.value,
-              },
-            }}
-            onClick={() => setOpen(false)}
-          >
-            {option.label}
-            {selectedType === option.value && (
-              <CheckIcon className={styles.popover__item__icon} />
-            )}
-          </Link>
-        ))}
+      <PopoverContent align="start" className={styles.popover__content}>
+        <p className={styles.popover__item__label}>
+          表示する人口データの選択
+          <PopoverClose className={styles.popover__close}>
+            <XIcon
+              aria-label="閉じる"
+              className={styles.popover__close__icon}
+            />
+          </PopoverClose>
+        </p>
+        <nav>
+          {typeOptions.map((option) => (
+            <Link
+              key={option.value}
+              aria-current={selectedType === option.value ? "page" : undefined}
+              aria-label={option.label}
+              aria-selected={selectedType === option.value}
+              className={clsx(
+                styles.popover__item,
+                selectedType === option.value && styles["popover__item--active"]
+              )}
+              href={{
+                pathname: "/",
+                query: {
+                  prefCode: searchParams.getAll("prefCode"),
+                  type: option.value,
+                },
+              }}
+              onClick={() => setOpen(false)}
+            >
+              {option.label}
+              {selectedType === option.value && (
+                <CheckIcon className={styles.popover__item__icon} />
+              )}
+            </Link>
+          ))}
+        </nav>
       </PopoverContent>
     </Popover>
   );

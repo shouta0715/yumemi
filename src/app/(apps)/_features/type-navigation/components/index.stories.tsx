@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { within, userEvent, expect, screen } from "@storybook/test";
+import { within, userEvent, expect, screen, waitFor } from "@storybook/test";
 import { TypeNavigation } from "@/app/(apps)/_features/type-navigation/components";
 
 import { selectViewport } from "@/tests/storybook";
@@ -35,6 +35,14 @@ export const Default: Story = {
     const total = screen.getByRole("link", { name: "総人口" });
 
     expect(total).toHaveAttribute("aria-current", "page");
+
+    const close = screen.getByRole("button", { name: "閉じる" });
+
+    await userEvent.click(close);
+
+    await waitFor(() => {
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    });
   },
 };
 
