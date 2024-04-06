@@ -9,6 +9,7 @@ export function Logo({ className, ...props }: LogoProps) {
   return (
     <Image
       alt="Poplus"
+      priority
       src="/logo.svg"
       {...props}
       className={clsx(styles.logo, className)}
