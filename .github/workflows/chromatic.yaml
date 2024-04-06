@@ -3,7 +3,7 @@ name: "Chromatic"
 on:
   pull_request:
     paths:
-      - "src/**/*.stories.*"
+      - "src/**"
       - "package.json"
       - "pnpm-lock.yaml"
       - ".env.example"
