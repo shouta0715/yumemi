@@ -5,13 +5,16 @@ import {
 } from "recharts/types/component/DefaultTooltipContent";
 
 import styles from "./index.module.scss";
+import { QueryLabelType } from "@/app/(apps)/_features/populations/types";
+import { getLabelType } from "@/app/(apps)/_features/populations/utils";
 
 type ToolTipProps = {
   payload: Payload<number, NameType>[];
   label: string;
+  type: QueryLabelType;
 };
 
-export function ToolTip({ payload, label }: ToolTipProps) {
+export function ToolTip({ payload, label, type }: ToolTipProps) {
   const sortedPayload = payload.sort((a, b) => {
     if (!a.value) return 1;
     if (!b.value) return -1;
@@ -21,7 +24,9 @@ export function ToolTip({ payload, label }: ToolTipProps) {
 
   return (
     <div className={styles.tooltip} role="tooltip">
-      <p className={styles.tooltip__label}>{label} 年の人口</p>
+      <p className={styles.tooltip__label}>
+        {label} 年の{getLabelType(type)}
+      </p>
       <ul className={styles.tooltip__content}>
         {sortedPayload.map((entry) => {
           return (

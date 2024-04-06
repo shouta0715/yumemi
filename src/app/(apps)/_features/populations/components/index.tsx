@@ -39,6 +39,7 @@ export async function Populations({
       <DynamicPopulationCharts
         data={parsePopulationResponse(data, type)}
         selectedPrefecture={selectedPrefecture}
+        type={type}
       />
     </div>
   );

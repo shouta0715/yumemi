@@ -64,3 +64,27 @@ export const Xxl: Story = {
     viewport: selectViewport("2xl"),
   },
 };
+
+export const Total: Story = {
+  args: {
+    type: "total",
+  },
+};
+
+export const Young: Story = {
+  args: {
+    type: "young",
+  },
+};
+
+export const Elderly: Story = {
+  args: {
+    type: "elderly",
+  },
+};
+
+export const Productive: Story = {
+  args: {
+    type: "productive",
+  },
+};
