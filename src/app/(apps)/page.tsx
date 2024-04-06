@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import styles from "./page.module.scss";
 import { ChartLoader } from "@/app/(apps)/_features/charts/components/loader";
 import { Populations } from "@/app/(apps)/_features/populations/components";
 import { getQueryLabelType } from "@/app/(apps)/_features/populations/utils";
@@ -19,14 +20,19 @@ export default async function Page({
   const selectedPrefCodes = getPrefCodesFromSearchParams(searchParams);
 
   return (
-    <div>
-      <Prefectures
-        prefectures={prefectures}
-        selectedLength={selectedPrefCodes.length}
-      />
-      <div>
-        <TypeNavigation selectedType={getQueryLabelType(searchParams?.type)} />
+    <div className={styles.page}>
+      <div className={styles.selectors}>
+        <Prefectures
+          prefectures={prefectures}
+          selectedLength={selectedPrefCodes.length}
+        />
+        <div>
+          <TypeNavigation
+            selectedType={getQueryLabelType(searchParams?.type)}
+          />
+        </div>
       </div>
+
       <div>
         {selectedPrefCodes.length === 0 ? (
           <Regions prefectures={prefectures} selectedLength={0} />
