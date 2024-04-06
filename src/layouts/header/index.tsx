@@ -10,6 +10,9 @@ export function Header() {
           <Logo height={64} width={64} />
           <span>Poplus</span>
         </h1>
+        <p className={styles.description}>
+          選択した都道府県の人口をグラフで表示するサービス
+        </p>
       </div>
     </header>
   );
