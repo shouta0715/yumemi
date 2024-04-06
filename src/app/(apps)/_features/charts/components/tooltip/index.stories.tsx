@@ -11,6 +11,8 @@ export default {
   tags: ["autodocs"],
   args: {
     label: "2024",
+    type: "total",
+    payload: mockTooltipData,
   },
   parameters: {
     a11y: {
@@ -42,6 +44,8 @@ type Story = StoryObj<typeof ToolTip>;
 export const Default: Story = {
   args: {
     payload: mockTooltipData,
+    label: "2024",
+    type: "total",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -51,54 +55,36 @@ export const Default: Story = {
 };
 
 export const Sp: Story = {
-  args: {
-    payload: mockTooltipData,
-  },
   parameters: {
     viewport: selectViewport("sp"),
   },
 };
 
 export const Sm: Story = {
-  args: {
-    payload: mockTooltipData,
-  },
   parameters: {
     viewport: selectViewport("sm"),
   },
 };
 
 export const Md: Story = {
-  args: {
-    payload: mockTooltipData,
-  },
   parameters: {
     viewport: selectViewport("md"),
   },
 };
 
 export const Lg: Story = {
-  args: {
-    payload: mockTooltipData,
-  },
   parameters: {
     viewport: selectViewport("lg"),
   },
 };
 
 export const Xl: Story = {
-  args: {
-    payload: mockTooltipData,
-  },
   parameters: {
     viewport: selectViewport("xl"),
   },
 };
 
 export const Xxl: Story = {
-  args: {
-    payload: mockTooltipData,
-  },
   parameters: {
     viewport: selectViewport("2xl"),
   },
@@ -119,5 +105,29 @@ export const BigData: Story = {
       },
       hide: false,
     })),
+  },
+};
+
+export const Total: Story = {
+  args: {
+    type: "total",
+  },
+};
+
+export const Young: Story = {
+  args: {
+    type: "young",
+  },
+};
+
+export const Elderly: Story = {
+  args: {
+    type: "elderly",
+  },
+};
+
+export const Productive: Story = {
+  args: {
+    type: "productive",
   },
 };
