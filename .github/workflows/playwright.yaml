@@ -23,6 +23,9 @@ jobs:
 
       - name: Setup environment variables
         uses: ./.github/actions/setup-env
+        with:
+          api-key: ${{ secrets.API_KEY }}
+          api-url: ${{ secrets.API_URL }}
 
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
