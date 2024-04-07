@@ -29,7 +29,7 @@ jobs:
         uses: ./.github/actions/setup-pnpm
 
       - name: Setup environment variables
-        run: cp .env.example .env.test
+        uses: ./.github/actions/setup-env
 
       - name: Run tests
         run: pnpm test:coverage
