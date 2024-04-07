@@ -1,13 +1,12 @@
-import { defineConfig, devices } from "@playwright/test";
+import dotenv from "dotenv";
+import { defineConfig, devices } from "next/experimental/testmode/playwright";
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
+dotenv.config({
+  path: "./.env.test",
+});
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
+const SITE_PORT = 8080;
+
 export default defineConfig({
   testDir: "./e2e",
 
@@ -31,8 +30,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: "http://localhost:3000/",
-
+    baseURL: `http://localhost:${SITE_PORT}`,
     screenshot: "only-on-failure",
     trace: "on-first-retry",
     video: "on-first-retry",
@@ -60,8 +58,8 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: "pnpm build && pnpm start",
-    url: "http://localhost:3000",
+    command: `rm -rf .next && npx next dev -p ${SITE_PORT} --experimental-test-proxy`,
+    port: SITE_PORT,
     reuseExistingServer: !process.env.CI,
   },
 });
