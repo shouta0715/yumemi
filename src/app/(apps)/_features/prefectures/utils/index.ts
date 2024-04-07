@@ -58,3 +58,9 @@ export const splitPrefecturesToRegions = (
 
   return result;
 };
+
+export const getAllPrefecturesParams = (prefectures: Prefecture[]): string => {
+  return prefectures
+    .map((prefecture) => `prefCode=${prefecture.prefCode}`)
+    .join("&");
+};
