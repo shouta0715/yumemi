@@ -25,6 +25,7 @@ export default async function Page({
         <Prefectures
           prefectures={prefectures}
           selectedLength={selectedPrefCodes.length}
+          type={getQueryLabelType(searchParams?.type)}
         />
         <div>
           <TypeNavigation

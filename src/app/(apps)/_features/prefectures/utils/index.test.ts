@@ -1,5 +1,6 @@
 import { mockPrefectures } from "@/app/(apps)/_features/prefectures/mocks";
 import {
+  getAllPrefecturesParams,
   getPrefCodesFromSearchParams,
   getSelectedPrefectures,
   splitPrefecturesToRegions,
@@ -193,6 +194,27 @@ describe("apps/prefectures/utils", () => {
           ],
         },
       ]);
+    });
+  });
+
+  describe("getAllPrefecturesParams", () => {
+    test("return query string", () => {
+      const prefectures = [
+        { prefCode: 13, prefName: "東京都" },
+        { prefCode: 14, prefName: "神奈川県" },
+      ];
+
+      const result = getAllPrefecturesParams(prefectures);
+
+      expect(result).toBe("prefCode=13&prefCode=14");
+    });
+
+    test("allPrefectures", () => {
+      const result = getAllPrefecturesParams(mockPrefectures);
+
+      expect(result).toBe(
+        "prefCode=1&prefCode=2&prefCode=3&prefCode=4&prefCode=5&prefCode=6&prefCode=7&prefCode=8&prefCode=9&prefCode=10&prefCode=11&prefCode=12&prefCode=13&prefCode=14&prefCode=15&prefCode=16&prefCode=17&prefCode=18&prefCode=19&prefCode=20&prefCode=21&prefCode=22&prefCode=23&prefCode=24&prefCode=25&prefCode=26&prefCode=27&prefCode=28&prefCode=29&prefCode=30&prefCode=31&prefCode=32&prefCode=33&prefCode=34&prefCode=35&prefCode=36&prefCode=37&prefCode=38&prefCode=39&prefCode=40&prefCode=41&prefCode=42&prefCode=43&prefCode=44&prefCode=45&prefCode=46&prefCode=47"
+      );
     });
   });
 });
