@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import { defineConfig, devices } from "next/experimental/testmode/playwright";
 
 dotenv.config({
-  path: "./.env.test",
+  path: ".env.test",
 });
 
 const SITE_PORT = 8080;
