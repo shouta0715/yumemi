@@ -3,7 +3,7 @@ export const getTestEnv = (env: Env): string => {
   const { API_URL, API_KEY } = process.env;
 
   if (API_URL) console.log("Loaded API_URL from .env", API_URL);
-  if (API_KEY) console.log("Loaded API_KEY from .env", API_KEY);
+  if (API_KEY) console.log("Loaded API_KEY from .env");
 
   if (!API_URL) {
     console.error("API_URL is not defined");
