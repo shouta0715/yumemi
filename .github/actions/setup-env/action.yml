@@ -13,7 +13,6 @@ runs:
   steps:
     - name: Setup Environment
       run: |
-        cp .env.example .env.test
-        echo "API_KEY=${{ inputs.api-key }}" >> .env.test
-        echo "API_URL=${{ inputs.api-url }}" >> .env.test
+        cp .env.example .env.test && echo "API_KEY=${{ inputs.api-key }}" >> .env.test && echo "API_URL=${{ inputs.api-url }}" >> .env.test
+
       shell: bash
