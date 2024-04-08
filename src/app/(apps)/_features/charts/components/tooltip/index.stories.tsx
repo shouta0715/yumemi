@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { within, expect } from "@storybook/test";
 import { ToolTip } from "@/app/(apps)/_features/charts/components/tooltip";
-import { mockTooltipData } from "@/app/(apps)/_features/charts/components/tooltip/mocks";
+import { mockTooltipData } from "@/tests/mocks/charts/tooltip";
 
 import { selectViewport } from "@/tests/storybook";
 

@@ -3,8 +3,8 @@ import {
   rest,
 } from "next/experimental/testmode/playwright/msw";
 import { getTestEnv } from "../../env";
-import { mockPrefectures } from "@/app/(apps)/_features/prefectures/mocks";
 import { FetchPrefecturesResponse } from "@/libs/types/api/prefectures";
+import { mockPrefectures } from "@/tests/mocks/prefectures";
 
 type MockPrefecturesHandlerParams = {
   status?: number;

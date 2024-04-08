@@ -1,9 +1,9 @@
-import { mockFetchSelectedPopulationResponse } from "@/app/(apps)/_features/populations/mocks";
 import {
   getLabelType,
   getQueryLabelType,
   parsePopulationResponse,
 } from "@/app/(apps)/_features/populations/utils";
+import { mockFetchSelectedPopulationResponse } from "@/tests/mocks/populations";
 
 describe("apps/populations/utils", () => {
   describe("getLabelType", () => {

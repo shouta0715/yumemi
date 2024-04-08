@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Regions } from "@/app/(apps)/_features/prefectures/components/regions";
-import { mockPrefectures } from "@/app/(apps)/_features/prefectures/mocks";
+import { mockPrefectures } from "@/tests/mocks/prefectures";
 import { selectViewport } from "@/tests/storybook";
 
 export default {

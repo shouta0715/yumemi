@@ -4,7 +4,7 @@ import PopulationCharts from "@/app/(apps)/_features/charts/components";
 import {
   mockPopulationData,
   mockSelectedPopulationData,
-} from "@/app/(apps)/_features/charts/components/mocks";
+} from "@/tests/mocks/charts";
 import { selectViewport } from "@/tests/storybook";
 
 export default {

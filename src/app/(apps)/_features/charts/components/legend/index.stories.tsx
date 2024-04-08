@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { within, expect } from "@storybook/test";
 import { Legend } from "@/app/(apps)/_features/charts/components/legend";
-import { mockLegendData } from "@/app/(apps)/_features/charts/components/legend/mocks";
+import { mockLegendData } from "@/tests/mocks/charts/legend";
 
 import { selectViewport } from "@/tests/storybook";
 
