@@ -1,10 +1,10 @@
-import { mockPrefectures } from "@/app/(apps)/_features/prefectures/mocks";
 import {
   getAllPrefecturesParams,
   getPrefCodesFromSearchParams,
   getSelectedPrefectures,
   splitPrefecturesToRegions,
 } from "@/app/(apps)/_features/prefectures/utils";
+import { mockPrefectures } from "@/tests/mocks/prefectures";
 
 describe("apps/prefectures/utils", () => {
   describe("getPrefCodesFromSearchParams", () => {

@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { within, expect, userEvent, screen } from "@storybook/test";
 import { Prefectures } from "@/app/(apps)/_features/prefectures/components";
-import { mockPrefectures } from "@/app/(apps)/_features/prefectures/mocks";
+import { mockPrefectures } from "@/tests/mocks/prefectures";
 
 import { selectViewport } from "@/tests/storybook";
 

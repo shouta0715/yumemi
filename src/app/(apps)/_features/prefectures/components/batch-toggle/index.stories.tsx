@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within, expect } from "@storybook/test";
 import { BatchTogglePrefectures } from "@/app/(apps)/_features/prefectures/components/batch-toggle";
-import { mockPrefectures } from "@/app/(apps)/_features/prefectures/mocks";
+import { mockPrefectures } from "@/tests/mocks/prefectures";
 
 export default {
   component: BatchTogglePrefectures,
