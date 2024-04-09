@@ -18,6 +18,9 @@ const config: StorybookConfig = {
       nextConfigPath: path.resolve(__dirname, "next.config.mjs"),
     },
   },
+  features: {
+    experimentalRSC: true,
+  },
   docs: {
     autodocs: "tag",
   },

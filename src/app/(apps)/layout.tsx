@@ -5,6 +5,6 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-export default async function Layout({ children }: Readonly<LayoutProps>) {
+export default function Layout({ children }: Readonly<LayoutProps>) {
   return <AppLayout>{children}</AppLayout>;
 }
