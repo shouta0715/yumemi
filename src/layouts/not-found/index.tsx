@@ -7,7 +7,7 @@ export function NotFoundPage() {
     <Layout>
       <div className={styles["not-found"]}>
         <p className={styles["not-found__code"]}>404</p>
-        <h1 className={styles["not-found__title"]}>Page not found</h1>
+        <h2 className={styles["not-found__title"]}>Page Not Found</h2>
         <p className={styles["not-found__description"]}>
           お探しのページが見つかりませんでした。
         </p>
