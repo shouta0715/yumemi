@@ -1,7 +1,7 @@
 import { FetchSelectedPopulationResponse } from "@/app/(apps)/_features/populations/types";
 import { Population } from "@/libs/types/api/populations";
 
-const mockPopulation: Population[] = [
+export const mockPopulation: Population[] = [
   {
     year: 1960,
     value: 100,
