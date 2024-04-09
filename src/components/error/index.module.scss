@@ -1,0 +1,57 @@
+@use "@/styles/common" as *;
+
+.error {
+  margin-top: 8rem;
+  text-align: center;
+}
+
+.error__code {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: $destructive;
+}
+
+.error__title {
+  margin-top: 1rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+
+  @include bp(sm) {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.error__description {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  line-height: 1.75rem;
+  color: $muted-foreground;
+}
+
+.error__button__container {
+  display: flex;
+  margin-top: 2.5rem;
+  column-gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.error__button {
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  background-color: $destructive;
+  color: $destructive-foreground;
+  border: none;
+  border-radius: $radius;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
