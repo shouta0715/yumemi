@@ -9,6 +9,7 @@
 # testing
 /coverage
 e2e/coverage
+screenshots/
 
 # next.js
 /.next/

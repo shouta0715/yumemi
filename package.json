@@ -18,7 +18,7 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:debug": "playwright test --debug",
-    "test:e2e:report": "pnpm playwright show-report",
+    "test:e2e:report": "pnpm playwright show-report e2e/coverage",
     "prepare": "husky",
     "sb": "storybook dev -p 6006",
     "sb:build": "storybook build",
