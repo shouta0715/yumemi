@@ -112,6 +112,12 @@ test("if hover chart, renders the tooltip", async ({ page }) => {
   const tooltip = page.getByRole("tooltip");
 
   await expect(tooltip).toBeVisible();
+
+  const close = page.getByRole("button", { name: "ツールチップを閉じる" });
+
+  await close.click();
+
+  await expect(tooltip).toBeHidden();
 });
 
 test("if change population type, to have new type", async ({ page }) => {
