@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const basicMetadata: Metadata = {
-  metadataBase: new URL("https://yumemi.vercel.app/"),
+  metadataBase: new URL("https://poplus-green.vercel.app/"),
   generator: "倉橋 渉太",
   applicationName: "Poplus",
   referrer: "no-referrer",
@@ -32,7 +32,7 @@ export const basicMetadata: Metadata = {
     title: "Poplus",
     description: "都道府県の人口をグラフで表示するアプリケーションです。",
     siteName: "Poplus",
-    url: "https://yumemi.vercel.app/",
+    url: "https://poplus-green.vercel.app/",
     locale: "ja_JP",
     type: "website",
   },
