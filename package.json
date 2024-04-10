@@ -86,7 +86,6 @@
     "sass": "^1.72.0",
     "storybook": "^8.0.5",
     "typescript": "^5",
-    "vercel": "^33.7.0",
     "vitest": "^1.4.0"
   },
   "lint-staged": {
