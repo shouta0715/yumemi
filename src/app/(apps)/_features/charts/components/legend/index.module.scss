@@ -4,6 +4,8 @@
   column-gap: 0.5rem;
   align-items: center;
   margin-left: 4.5rem;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .legend__item {
