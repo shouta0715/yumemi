@@ -1,0 +1,42 @@
+name: Run unit Tests
+
+on:
+  pull_request:
+    paths:
+      - "src/**"
+      - "test/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".env.example"
+      - "vite.config.mts"
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: ./.github/actions/setup-pnpm
+
+      - name: Setup environment variables
+        uses: ./.github/actions/setup-env
+        with:
+          api-key: ${{ secrets.API_KEY }}
+          api-url: ${{ secrets.API_URL }}
+
+      - name: Run tests
+        run: pnpm test:coverage
+
+      - name: Upload coverage
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2

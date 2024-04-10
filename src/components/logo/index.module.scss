@@ -1,0 +1,13 @@
+@use "@/styles/common" as *;
+
+.logo {
+  border-radius: 9999px;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+
+  @include bp(sm) {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}

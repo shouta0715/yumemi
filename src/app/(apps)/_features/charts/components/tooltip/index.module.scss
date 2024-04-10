@@ -1,0 +1,38 @@
+@use "@/styles/common" as *;
+
+.tooltip {
+  background-color: $background;
+  border: 1px solid $border;
+}
+
+.tooltip__label {
+  position: sticky;
+  top: 0;
+  background-color: $background;
+  border-bottom: 1px solid $border;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.tooltip__content {
+  padding-inline: 0.5rem;
+  background-color: $background;
+  border-radius: 0.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.tooltip__item {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.tooltip__dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}

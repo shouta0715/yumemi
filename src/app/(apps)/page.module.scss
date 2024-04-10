@@ -1,0 +1,23 @@
+@use "@/styles/common" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: $background;
+  border-radius: 1rem;
+
+  @include bp(sm) {
+    gap: 3rem;
+  }
+}
+
+.selectors {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+
+  @include bp(sm) {
+    flex-direction: row;
+  }
+}

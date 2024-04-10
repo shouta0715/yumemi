@@ -1,0 +1,35 @@
+@use "@/styles/common" as *;
+
+.batch-toggle {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 1rem;
+}
+
+.batch-toggle__item {
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.batch-toggle__reset {
+  background-color: $destructive;
+  color: $destructive-foreground;
+  border: none;
+  border-radius: $radius;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.batch-toggle__all {
+  background-color: $primary;
+  color: $primary-foreground;
+  border: none;
+  border-radius: $radius;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

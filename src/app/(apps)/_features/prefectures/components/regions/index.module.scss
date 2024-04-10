@@ -1,0 +1,56 @@
+@use "@/styles/common" as *;
+
+.regions {
+  display: grid;
+  gap: 1rem;
+}
+
+.regions__title {
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.regions__description {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding-right: 2rem;
+  color: $primary;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.regions__description__note {
+  font-size: 0.875rem;
+  color: $muted-foreground;
+  display: block;
+}
+
+.prefectures {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  @include bp(sm) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @include bp(md) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  @include bp(lg) {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  @include bp(xl) {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+}
+
+.prefectures__title {
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  scroll-margin: 5rem;
+}

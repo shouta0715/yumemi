@@ -1,0 +1,53 @@
+@use "@/styles/common" as *;
+
+.header {
+  flex-shrink: 0;
+  background-color: $background;
+  margin-top: 2rem;
+}
+
+.container {
+  padding: 0 1rem;
+  flex: 1 1 0%;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  column-gap: 2rem;
+
+  height: 3.5rem;
+
+  @include bp(sm) {
+    padding: 0 1.5rem;
+  }
+
+  @include bp(lg) {
+    padding: 0 2rem;
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  scroll-margin-top: 5rem;
+  color: $primary;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @include bp(sm) {
+    font-size: 3rem;
+  }
+}
+
+.description {
+  font-weight: 400;
+  color: $muted-foreground;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+
+  @include bp(sm) {
+    font-size: 1rem;
+  }
+}

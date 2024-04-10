@@ -1,0 +1,18 @@
+name: Setup Environment
+description: Setup Environment File
+inputs:
+  api-key:
+    description: "API Key"
+    required: true
+  api-url:
+    description: "API URL"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Environment
+      run: |
+        echo "API_KEY=${{ inputs.api-key }}" > .env.test
+        echo "API_URL=${{ inputs.api-url }}" >> .env.test
+      shell: bash
