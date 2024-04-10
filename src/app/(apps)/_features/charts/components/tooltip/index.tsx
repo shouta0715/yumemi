@@ -1,4 +1,5 @@
-import React from "react";
+import { X } from "lucide-react";
+import React, { useMemo } from "react";
 import {
   NameType,
   Payload,
@@ -12,20 +13,38 @@ type ToolTipProps = {
   payload: Payload<number, NameType>[];
   label: string;
   type: QueryLabelType;
+  setOpenedTooltip: (open: true | undefined) => void;
 };
 
-export function ToolTip({ payload, label, type }: ToolTipProps) {
-  const sortedPayload = payload.sort((a, b) => {
-    if (!a.value) return 1;
-    if (!b.value) return -1;
+export function ToolTip({
+  payload,
+  label,
+  type,
+  setOpenedTooltip,
+}: ToolTipProps) {
+  const sortedPayload = useMemo(() => {
+    payload.sort((a, b) => {
+      if (!a.value) return 1;
+      if (!b.value) return -1;
 
-    return b.value - a.value;
-  });
+      return b.value - a.value;
+    });
+
+    return payload;
+  }, [payload]);
 
   return (
     <div className={styles.tooltip} role="tooltip">
       <p className={styles.tooltip__label}>
         {label} 年の{getLabelType(type)}
+        <button
+          className={styles.tooltip__close}
+          onClick={() => setOpenedTooltip(undefined)}
+          type="button"
+        >
+          <X className={styles.tooltip__icon} />
+          <span className={styles["sr-only"]}>ツールチップを閉じる</span>
+        </button>
       </p>
       <ul className={styles.tooltip__content}>
         {sortedPayload.map((entry) => {
