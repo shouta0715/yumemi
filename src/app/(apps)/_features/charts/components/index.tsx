@@ -34,6 +34,8 @@ function PopulationCharts({
   selectedPrefecture,
   type,
 }: PopulationListProps) {
+  const [openTooltip, setOpenTooltip] = React.useState<true | undefined>(true);
+
   return (
     <div>
       <ResponsiveChartContainer height={600} width="100%">
@@ -44,6 +46,7 @@ function PopulationCharts({
             left: 20,
             top: 20,
           }}
+          onMouseEnter={() => setOpenTooltip(true)}
         >
           <ChartGrid strokeDasharray="3 3" />
           <ChartXAxis
@@ -59,14 +62,14 @@ function PopulationCharts({
               fontSize: 13,
             }}
             tick={{
-              fontSize: 14,
+              fontSize: 12,
             }}
             tickCount={18}
             type="number"
           />
           <ChartYAxis
             className={styles.charts__yAxis}
-            fontSize={14}
+            fontSize={12}
             label={{
               value: `${getLabelType(type)}`,
               position: "insideTopLeft",
@@ -77,10 +80,18 @@ function PopulationCharts({
             tickFormatter={(value: number) => value.toLocaleString()}
           />
           <ChartTooltip
+            active={openTooltip}
             content={({ active, payload, label }) => {
               if (!active || !payload) return null;
 
-              return <ToolTip label={label} payload={payload} type={type} />;
+              return (
+                <ToolTip
+                  label={label}
+                  payload={payload}
+                  setOpenedTooltip={setOpenTooltip}
+                  type={type}
+                />
+              );
             }}
             formatter={(value: number) => {
               return `${value.toLocaleString()} 人`;
@@ -88,14 +99,15 @@ function PopulationCharts({
             labelFormatter={(label: number) => {
               return `${label} 年`;
             }}
-            position={{ y: 20 }}
+            position={{ y: 580 }}
             wrapperStyle={{
               maxHeight: "200px",
               overflowY: "auto",
               pointerEvents: "auto",
-              backgroundColor: "var(--background)",
+              backgroundColor: "white",
               left: "-10px",
               boxShadow: "0 0 10px rgba(0, 0, 0, 0.15)",
+              zIndex: 1000,
             }}
           />
           <ChartLegend
@@ -118,6 +130,7 @@ function PopulationCharts({
                 data={population}
                 dataKey="value"
                 name={prefecture.prefName}
+                onMouseEnter={() => setOpenTooltip(true)}
                 stroke={`hsl(${(prefecture.prefCode * 19) % 360}deg, 60%, 60%)`}
                 type="monotone"
               />
