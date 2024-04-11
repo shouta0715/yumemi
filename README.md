@@ -45,9 +45,10 @@
 
 ### ホスティング
 
-| ツール                        | バージョン |
-| ----------------------------- | ---------- |
-| [Vercel](https://vercel.com/) | (予定)     |
+| ツール                                  | URL                                                                          |
+| --------------------------------------- | ---------------------------------------------------------------------------- |
+| [Vercel](https://vercel.com/)           | [Vercel](https://poplus-green.vercel.app/)                                   |
+| [Chromatic](https://www.chromatic.com/) | [storybook](https://www.chromatic.com/builds?appId=66093e6d4bf883189fbfb062) |
 
 ### テストツール
 
@@ -245,7 +246,11 @@ pnpm preview
 ## デプロイ先
 
 1. Storybookのデプロイ先
+
    - [Chromatic](https://www.chromatic.com/builds?appId=66093e6d4bf883189fbfb062)
+
+2. Next.jsのデプロイ先
+   - [Vercel](https://poplus-green.vercel.app/)
 
 ## コマンド一覧
 
