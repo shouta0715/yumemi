@@ -17,13 +17,11 @@ jobs:
         with:
           fetch-depth: 0
 
-    # 制限に達した + 完成したのでコメントアウト
+      - name: Setup pnpm
+        uses: ./.github/actions/setup-pnpm
 
-    # - name: Setup pnpm
-    #   uses: ./.github/actions/setup-pnpm
-
-    # - name: Run Chromatic
-    #   uses: chromaui/action@latest
-    #   with:
-    #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-    #     buildScriptName: "sb:build"
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: "sb:build"
