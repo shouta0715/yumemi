@@ -276,3 +276,5 @@ pnpm preview
 | `sb`              | Storybookの開発サーバーをポート6006で起動します。                            |
 | `sb:build`        | Storybookをビルドします。                                                    |
 | `sb:test`         | `test-storybook`を使ってStorybookのテストを実行します。                      |
+
+2024年に評価済み
